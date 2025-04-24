@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="checklist.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </html>
+    <div class="container">
+        <a href="/index.html" class="btn">Home</a>
+        <header>
+            <h1>
+                <div>DecoNetwork Pre-Launch Checklist</div>
+            </h1>
+        </header>
+        
+        <div class="progress-summary">
+            <h2>Launch Progress</h2>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="overall-progress" style="width: 0%"></div>
+            </div>
+            <p id="progress-text">0% complete (0/0 tasks)</p>
+        </div>
+        
+        <div class="checklist-container">
+            <!-- Content Section -->
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>1. Choose & Manage Supplier Products</span>
+                    <span class="section-progress">0/0</span>
+                </div>
+                <div class="section-content">
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task-1-1" onchange="updateProgress()">
+                        <label for="task-1-1">Choose Suppliers</label>
+                        <span class="date-completed" id="date-1-1"></span>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task-1-2" onchange="updateProgress()">
+                        <label for="task-1-2">Set Your Available Products</label>
+                        <span class="date-completed" id="date-1-2"></span>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task-1-3" onchange="updateProgress()">
+                        <label for="task-1-3">Set your Product Markup</label>
+                        <span class="date-completed" id="date-1-3"></span>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task-1-4" onchange="updateProgress()">
+                        <label for="task-1-4">All required legal pages published (Terms, Privacy Policy, etc.)</label>
+                        <span class="date-completed" id="date-1-4"></span>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task-1-5" onchange="updateProgress()">
+                        <label for="task-1-5">Contact information Set</label>
+                        <span class="date-completed" id="date-1-5"></span>
+                    </div>
+                    <h4>Notes:</h4>
+                    <textarea class="notes-area" id="notes-1" placeholder="Add any additional notes here..." onchange="saveNotes()"></textarea>
+                </div>
+            </div>
+            
+            <!-- Technical Section -->
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>2. Decoration Processes</span>
+                    <span class="section-progress">0/0</span>
+                </div>
+                <div class="section-content">
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task-2-1" onchange="updateProgress()">
+                        <label for="task-2-1">Choose All your Available Processes</label>
+                        <span class="date-completed" id="date-2-1"></span>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task-2-2" onchange="updateProgress()">
+                        <label for="task-2-2">Setup Price Tables</label>
+                        <span class="date-completed" id="date-2-2"></span>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task-2-3" onchange="updateProgress()">
+                        <label for="task-2-3">Choose/Import Your Color Palettes</label>
+                        <span class="date-completed" id="date-2-3"></span>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task-2-4" onchange="updateProgress()">
+                        <label for="task-2-4">Specify Your Decoration Pricing</label>
+                        <span class="date-completed" id="date-2-4"></span>
+                    </div>
+                    <h4>Notes:</h4>
+                    <textarea class="notes-area" id="notes-2" placeholder="Add any additional notes here..." onchange="saveNotes()"></textarea>
+                </div>
+            </div>
+            
+            <!-- Design Section -->
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>3. Design & User Experience</span>
+                    <span class="section-progress">0/0</span>
+                </div>
+                <div class="section-content">
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task-3-1" onchange="updateProgress()">
+                        <label for="task-3-1">Responsive design verified on all device sizes</label>
+                        <span class="date-completed" id="date-3-1"></span>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task-3-2" onchange="updateProgress()">
+                        <label for="task-3-2">Color scheme consistency checked</label>
+                        <span class="date-completed" id="date-3-2"></span>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task-3-3" onchange="updateProgress()">
+                        <label for="task-3-3">Font styles and sizes reviewed for readability</label>
+                        <span class="date-completed" id="date-3-3"></span>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task-3-4" onchange="updateProgress()">
+                        <label for="task-3-4">Navigation menu functionality tested</label>
+                        <span class="date-completed" id="date-3-4"></span>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task-3-5" onchange="updateProgress()">
+                        <label for="task-3-5">Brand logo and favicon implemented</label>
+                        <span class="date-completed" id="date-3-5"></span>
+                    </div>
+                    <h4>Notes:</h4>
+                    <textarea class="notes-area" id="notes-3" placeholder="Add any additional notes here..." onchange="saveNotes()"></textarea>
+                </div>
+            </div>
+            
+            <!-- Testing Section -->
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>4. Production Management Settings</span>
+                    <span class="section-progress">0/0</span>
+                </div>
+                <div class="section-content">
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task-4-1" onchange="updateProgress()">
+                        <label for="task-4-1">Production & Order Pending Times</label>
+                        <span class="date-completed" id="date-4-1"></span>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task-4-2" onchange="updateProgress()">
+                        <label for="task-4-2">Production Statuses</label>
+                        <span class="date-completed" id="date-4-2"></span>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task-4-3" onchange="updateProgress()">
+                        <label for="task-4-3">Taxes</label>
+                        <span class="date-completed" id="date-4-3"></span>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task-4-4" onchange="updateProgress()">
+                        <label for="task-4-4">Account Terms</label>
+                        <span class="date-completed" id="date-4-4"></span>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task-4-5" onchange="updateProgress()">
+                        <label for="task-4-5">Payment Method Setup</label>
+                        <span class="date-completed" id="date-4-5"></span>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task-4-6" onchange="updateProgress()">
+                        <label for="task-4-6">Email & Order Templates</label>
+                        <span class="date-completed" id="date-4-6"></span>
+                    </div>
+                    <h4>Notes:</h4>
+                    <textarea class="notes-area" id="notes-4" placeholder="Add any additional notes here..." onchange="saveNotes()"></textarea>
+                </div>
+            </div>
+            
+            <!-- SEO Section -->
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>5. SEO & Marketing</span>
+                    <span class="section-progress">0/0</span>
+                </div>
+                <div class="section-content">
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task-5-1" onchange="updateProgress()">
+                        <label for="task-5-1">Meta titles and descriptions for all pages</label>
+                        <span class="date-completed" id="date-5-1"></span>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task-5-2" onchange="updateProgress()">
+                        <label for="task-5-2">Analytics tracking code installed</label>
+                        <span class="date-completed" id="date-5-2"></span>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task-5-3" onchange="updateProgress()">
+                        <label for="task-5-3">XML sitemap created and submitted</label>
+                        <span class="date-completed" id="date-5-3"></span>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task-5-4" onchange="updateProgress()">
+                        <label for="task-5-4">Social media meta tags implemented</label>
+                        <span class="date-completed" id="date-5-4"></span>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task-5-5" onchange="updateProgress()">
+                        <label for="task-5-5">Search Console configured</label>
+                        <span class="date-completed" id="date-5-5"></span>
+                    </div>
+                    <h4>Notes:</h4>
+                    <textarea class="notes-area" id="notes-5" placeholder="Add any additional notes here..." onchange="saveNotes()"></textarea>
+                </div>
+        </div>
+        
+        <div class="buttons">
+            <button onclick="saveChecklist()">Save Progress</button>
+            <button class="export" onclick="exportChecklist()">Export Checklist</button>
+            <button class="reset" onclick="resetChecklist()">Reset Checklist</button>
+        </div>
+    </div>
+</head>
+<script src="checklistScript.js"></script>

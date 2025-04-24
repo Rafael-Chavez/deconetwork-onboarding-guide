@@ -1,0 +1,165 @@
+:root {
+    --primary: #3498db;
+    --secondary: #2c3e50;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --success: #2ecc71;
+    --text: #333;
+    --background: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--primary);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.welcome {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 2rem;
+    background-color: var(--light);
+    border-radius: 8px;
+}
+
+.section {
+    margin: 3rem 0;
+}
+
+h2 {
+    color: var(--secondary);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary);
+}
+
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.resource-card {
+    background-color: var(--light);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.resource-card h3 {
+    color: var(--primary);
+    margin-bottom: 0.8rem;
+}
+
+.resource-card p {
+    margin-bottom: 1rem;
+    color: var(--text);
+    font-size: 0.95rem;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+.support {
+    background-color: var(--secondary);
+    color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 3rem 0;
+}
+
+.support h2 {
+    color: white;
+    border-bottom-color: var(--light);
+}
+
+.support-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.support-item {
+    text-align: center;
+    padding: 1rem;
+}
+
+.support-item i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.support-item a {
+    color: var(--light);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.support-item a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: var(--dark);
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+    .resource-grid,
+    .support-grid {
+        grid-template-columns: 1fr;
+    }
+}
