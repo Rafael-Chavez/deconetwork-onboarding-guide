@@ -50,3 +50,9 @@ document.addEventListener('DOMContentLoaded', function() {
     yearSpan.textContent = new Date().getFullYear();
     document.querySelector('footer p:last-child').appendChild(yearSpan);
 });
+<script>
+  document.querySelectorAll('a[href^="http"], a[href$=".html"]').forEach(link => {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+  });
+</script>
