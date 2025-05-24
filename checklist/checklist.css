@@ -102,7 +102,7 @@ header h1 {
     bottom: 0;
     background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.2) 50%, transparent 100%);
     animation: shimmer 2s infinite;
-}
+} 
 
 @keyframes shimmer {
     0% { transform: translateX(-100%); }

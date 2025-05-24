@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checklist with Progress Bar</title>
+  <style>
+    /* CSS goes here (full working version) */
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(135deg, #667eea 0%, #020350 100%);
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #4f46e5;
+    }
+    .progress-summary {
+      margin: 24px 0;
+    }
+    .progress-bar-container {
+      height: 12px;
+      background: #e2e8f0;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+    .section {
+      margin: 24px 0;
+    }
+    .checklist-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .checklist-item input {
+      margin-right: 10px;
+    }
+    .date-completed {
+      margin-left: auto;
+      font-size: 0.85rem;
+      color: #10b981;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Checklist Demo</h1>
+
+    <section class="progress-summary">
+      <h2>Progress</h2>
+      <div class="progress-bar-container">
+        <div id="overall-progress" class="progress-bar"></div>
+      </div>
+      <p id="progress-text">Loading...</p>
+    </section>
+
+    <section class="section">
+      <h3>Section 1</h3>
+      <div class="checklist-item">
+        <input type="checkbox" id="task-1">
+        <label for="task-1">Task 1</label>
+        <span class="date-completed" id="date-1-1"></span>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="task-2">
+        <label for="task-2">Task 2</label>
+        <span class="date-completed" id="date-1-2"></span>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      loadChecklist();
+      updateProgress();
+      document.querySelectorAll('input[type="checkbox"]').forEach(cb =>
+        cb.addEventListener('change', updateProgress)
+      );
+    });
+
+    function updateProgress() {
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      const completed = Array.from(checkboxes).filter(cb => cb.checked).length;
+      const total = checkboxes.length;
+      const percentage = total > 0 ? Math.round((completed / total) * 100) : 0;
+
+      document.getElementById('overall-progress').style.width = `${percentage}%`;
+      document.getElementById('progress-text').textContent =
+        `${percentage}% complete (${completed}/${total} tasks)`;
+
+      checkboxes.forEach((cb, index) => {
+        const dateEl = document.getElementById(`date-1-${index + 1}`);
+        if (cb.checked && !dateEl.textContent) {
+          dateEl.textContent = `Completed: ${new Date().toLocaleDateString()}`;
+        } else if (!cb.checked) {
+          dateEl.textContent = '';
+        }
+      });
+
+      saveChecklist();
+    }
+
+    function saveChecklist() {
+      const data = {
+        tasks: {},
+        dates: {}
+      };
+
+      document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+        data.tasks[cb.id] = cb.checked;
+      });
+
+      document.querySelectorAll('.date-completed').forEach(span => {
+        data.dates[span.id] = span.textContent;
+      });
+
+      localStorage.setItem('demoChecklist', JSON.stringify(data));
+    }
+
+    function loadChecklist() {
+      const saved = localStorage.getItem('demoChecklist');
+      if (!saved) return;
+      const data = JSON.parse(saved);
+
+      Object.entries(data.tasks).forEach(([id, checked]) => {
+        const cb = document.getElementById(id);
+        if (cb) cb.checked = checked;
+      });
+
+      Object.entries(data.dates).forEach(([id, text]) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = text;
+      });
+    }
+  </script>
+</body>
+</html>

@@ -21,7 +21,7 @@
         </div>
         
         <div class="checklist-container">
-            <!-- Content Section -->
+            <!-- Settings Section -->
             <div class="section">
                 <div class="section-header" onclick="toggleSection(this)">
                     <span>1. Setup your Settings</span>
@@ -48,12 +48,32 @@
                         <label for="task-1-4">Terms & Conditions (Returns Policy)</label>
                         <span class="date-completed" id="date-1-4"></span>
                     </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task-1-5" onchange="updateProgress()">
+                        <label for="task-1-5">Production & Order Pending Times</label>
+                        <span class="date-completed" id="date-1-5"></span>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task-1-6" onchange="updateProgress()">
+                        <label for="task-1-6">Production Statuses</label>
+                        <span class="date-completed" id="date-1-6"></span>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task-1-7" onchange="updateProgress()">
+                        <label for="task-1-7">Quote Order & Invoice Settings</label>
+                        <span class="date-completed" id="date-1-7"></span>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task-1-8" onchange="updateProgress()">
+                        <label for="task-1-8">Purchase Order Settings</label>
+                        <span class="date-completed" id="date-1-8"></span>
+                    </div>
                     <h4>Notes:</h4>
                     <textarea class="notes-area" id="notes-1" placeholder="Add any additional notes here..." onchange="saveNotes()"></textarea>
                 </div>
             </div>
             
-            <!-- Decoration Section -->
+            <!-- Decoration Section -->    
             <div class="section">
                 <div class="section-header" onclick="toggleSection(this)">
                     <span>2. Decoration Processes</span>
@@ -81,9 +101,9 @@
                         <span class="date-completed" id="date-2-4"></span>
                     </div>
                     <div class="checklist-item">
-                        <input type="checkbox" id="task-2-4" onchange="updateProgress()">
-                        <label for="task-2-4">Artwork Fees/Approvals</label>
-                        <span class="date-completed" id="date-2-4"></span>
+                        <input type="checkbox" id="task-2-5" onchange="updateProgress()">
+                        <label for="task-2-5">Artwork Fees/Approvals</label>
+                        <span class="date-completed" id="date-2-5"></span>
                     </div>
                     <h4>Notes:</h4>
                     <textarea class="notes-area" id="notes-2" placeholder="Add any additional notes here..." onchange="saveNotes()"></textarea>
@@ -121,9 +141,10 @@
                     <textarea class="notes-area" id="notes-3" placeholder="Add any additional notes here..." onchange="saveNotes()"></textarea>
                 </div>
             </div>
+        </div>
             
             <!-- Business Hub Section -->
-            <div class="section">
+ <!--           <div class="section">
                 <div class="section-header" onclick="toggleSection(this)">
                     <span>4. Business Hub Production Management Settings</span>
                     <span class="section-progress">0/0</span>
@@ -152,7 +173,7 @@
                     <h4>Notes:</h4>
                     <textarea class="notes-area" id="notes-4" placeholder="Add any additional notes here..." onchange="saveNotes()"></textarea>
                 </div>
-            </div>       
+            </div>       -->
         <div class="buttons">
             <button onclick="saveChecklist()">Save Progress</button>
             <button class="export" onclick="exportChecklist()">Export Checklist</button>
