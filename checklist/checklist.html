@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <title>DecoNetwork Pre-Launch Checklist</title>
     <link rel="stylesheet" href="checklist.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </html>
+</head>
+<body>
     <div class="container">
         <a href="https://rafael-chavez.github.io/deconetwork-carepackage/" class="btn">Home</a>
         <header>
@@ -11,14 +14,6 @@
                 <div>DecoNetwork Pre-Launch Checklist</div>
             </h1>
         </header>
-        
-        <div class="progress-summary">
-            <h2>Launch Progress</h2>
-            <div class="progress-bar-container">
-                <div class="progress-bar" id="overall-progress" style="width: 0%"></div>
-            </div>
-            <p id="progress-text">0% complete (0/0 tasks)</p>
-        </div>
         
         <div class="checklist-container">
             <!-- Settings Section -->
@@ -142,43 +137,12 @@
                 </div>
             </div>
         </div>
-            
-            <!-- Business Hub Section -->
- <!--           <div class="section">
-                <div class="section-header" onclick="toggleSection(this)">
-                    <span>4. Business Hub Production Management Settings</span>
-                    <span class="section-progress">0/0</span>
-                </div>
-                <div class="section-content">
-                    <div class="checklist-item">
-                        <input type="checkbox" id="task-4-1" onchange="updateProgress()">
-                        <label for="task-4-1">Production & Order Pending Times</label>
-                        <span class="date-completed" id="date-4-1"></span>
-                    </div>
-                    <div class="checklist-item">
-                        <input type="checkbox" id="task-4-2" onchange="updateProgress()">
-                        <label for="task-4-2">Production Statuses</label>
-                        <span class="date-completed" id="date-4-2"></span>
-                    </div>
-                    <div class="checklist-item">
-                        <input type="checkbox" id="task-4-3" onchange="updateProgress()">
-                        <label for="task-4-3">Quote Order & Invoice Settings</label>
-                        <span class="date-completed" id="date-4-3"></span>
-                    </div>
-                    <div class="checklist-item">
-                        <input type="checkbox" id="task-4-4" onchange="updateProgress()">
-                        <label for="task-4-4">Purchase Order Settings</label>
-                        <span class="date-completed" id="date-4-4"></span>
-                    </div>
-                    <h4>Notes:</h4>
-                    <textarea class="notes-area" id="notes-4" placeholder="Add any additional notes here..." onchange="saveNotes()"></textarea>
-                </div>
-            </div>       -->
         <div class="buttons">
             <button onclick="saveChecklist()">Save Progress</button>
             <button class="export" onclick="exportChecklist()">Export Checklist</button>
             <button class="reset" onclick="resetChecklist()">Reset Checklist</button>
         </div>
     </div>
-</head>
-<script src="checklistScript.js"></script>
+    <script src="checklistScript.js"></script>
+    </body>
+</html>
