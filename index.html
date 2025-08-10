@@ -9,16 +9,30 @@
 </head>
 <body>
     <header>
-        <div class="logo">DecoNetwork Onboarding Guide</div>
+        <div class="header-content">
+            <div class="logo">
+                <h1>DecoNetwork Onboarding Guide</h1>
+                <p class="tagline">Your comprehensive resource center</p>
+            </div>
+        </div>
     </header>
     
-    <div class="container">
-        <div class="welcome">
-            <h1>Welcome to the Resource Center</h1>
-            <p>This guide is where you'll find helpful videos, guides, and resources to support your journey with DecoNetwork.</p>
-        </div>
+    <main class="container">
+        <section class="hero-section">
+            <div class="hero-content">
+                <h2>Welcome to the Resource Center</h2>
+                <p class="hero-description">This guide is where you'll find helpful videos, guides, and resources to support your journey with DecoNetwork.</p>
+            </div>
+            <div class="cta-card">
+                <div class="cta-content">
+                    <h3>Get in Contact with a DecoPro</h3>
+                    <p>Need personalized assistance? Our DecoPros are here to help you move forward quickly and confidently.</p>
+                    <a href="https://www.deconetwork.com/decopro-request/" class="btn btn-primary">Talk to a DecoPro</a>
+                </div>
+            </div>
+        </section>
         
-        <div class="section">
+        <section class="content-section">
             <h2>Getting Started</h2>
             <div class="resource-grid">
 
@@ -38,9 +52,9 @@
                     <a href="https://youtube.com/playlist?list=PL3zTZr9DNFCIWoMfQwwmAqfFN6gOzMcRj&feature=shared" class="btn">Watch Tutorial</a>
                 </div>
             </div>
-        </div>
+        </section>
         
-        <div class="section">
+        <section class="content-section">
             <h2>Product Management</h2>
             <div class="resource-grid">
                 <div class="resource-card">
@@ -59,9 +73,9 @@
                     <a href="https://www.youtube.com/watch?v=o_MmdIGa7JU&list=PL3zTZr9DNFCK5TBPw74UQ5Jr_TLnxAm2T&index=1" class="btn">View Guide</a>
                 </div>
             </div>
-        </div>
+        </section>
         
-        <div class="section">
+        <section class="content-section">
             <h2>Order Processing</h2>
             <div class="resource-grid">
                 <div class="resource-card">
@@ -80,9 +94,9 @@
                     <a href="https://www.youtube.com/watch?v=t-UzXCKZqbk" class="btn">Watch Video</a>
                 </div>
             </div>
-        </div>
+        </section>
         
-        <div class="section">
+        <section class="content-section">
             <h2>Customer Management</h2>
             <div class="resource-grid">
                 <div class="resource-card">
@@ -101,9 +115,9 @@
                     <a href="https://help.deconetwork.com/hc/en-us/articles/235214148-Email-Templates" class="btn">View Guide</a>
                 </div>
             </div>
-        </div>
+        </section>
         
-        <div class="section">
+        <section class="content-section">
             <h2>Advanced Features</h2>
             <div class="resource-grid">
                 <div class="resource-card">
@@ -123,9 +137,9 @@
                     <a href="https://www.youtube.com/watch?v=-pKZTe8zbNI" class="btn">Watch Tutorial</a>
                 </div>
             </div>
-        </div>
+        </section>
         
-        <div class="support">
+        <section class="support-section">
             <h2>Have additional questions?</h2>
             <p>If you have more ideas with questions regarding the software that might need a video, please don't hesitate to reach out through the following channels:</p>
             <div class="support-grid">
@@ -142,11 +156,11 @@
                 <div class="support-item">
                     <i class="fas fa-calendar-alt"></i>
                     <h3>Schedule Follow-up</h3>
-                    <a href="#">Book a Session</a>
+                    <a href="https://scheduler.zoom.us/d/zy5bqh11/2nd-onboarding-session">Book a Session</a>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
+    </main>
 
     <footer>
         <p>All resources are regularly updated to ensure you have access to the most current information.</p>
@@ -154,5 +168,15 @@
     </footer>
 
     <script src="script.js"></script>
+    
+    <!-- Zendesk iframe height adjustment -->
+    <script>
+        function sendHeight() {
+            var height = document.body.scrollHeight;
+            window.parent.postMessage({ type: 'resize', height: height }, '*');
+        }
+        window.addEventListener('load', sendHeight);
+        window.addEventListener('resize', sendHeight);
+    </script>
 </body>
 </html>

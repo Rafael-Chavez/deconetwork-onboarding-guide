@@ -2,27 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DecoNetwork Pre-Launch Checklist</title>
+    <meta name="description" content="Complete setup checklist for your DecoNetwork store launch">
     <link rel="stylesheet" href="checklist.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
-        <a href="https://rafael-chavez.github.io/deconetwork-onboarding-guide/" class="btn">Home</a>
-        <header>
-            <h1>
-                <div>DecoNetwork Pre-Launch Checklist</div>
-            </h1>
+        <nav class="navigation">
+            <a href="../index.html" class="btn btn-home" aria-label="Return to home">
+                <i class="fas fa-home" aria-hidden="true"></i>
+                <span>Home</span>
+            </a>
+        </nav>
+        
+        <header class="checklist-header">
+            <h1>DecoNetwork Pre-Launch Checklist</h1>
+            <p class="header-description">Complete these essential tasks to launch your DecoNetwork store successfully</p>
         </header>
         
-        <div class="checklist-container">
+        <section class="progress-overview">
+            <h2>Overall Progress</h2>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="overall-progress"></div>
+                    <div class="progress-shimmer"></div>
+                </div>
+                <div class="progress-stats">
+                    <span id="progress-text">0% complete (0/0 tasks)</span>
+                    <span class="estimated-time">Estimated completion: <span id="estimated-time">--</span></span>
+                </div>
+            </div>
+        </section>
+        
+        <main class="checklist-container" role="main">
             <!-- Settings Section -->
             <div class="section">
                 <div class="section-header" onclick="toggleSection(this)">
                     <span>1. Setup your Settings</span>
                     <span class="section-progress">0/0</span>
                 </div>
-                <div class="section-content">
+                <div class="section-content" role="region" aria-labelledby="settings-header">
                     <div class="checklist-item">
                         <input type="checkbox" id="task-1-1" onchange="updateProgress()">
                         <label for="task-1-1">Configure DecoPay</label>
@@ -64,7 +85,7 @@
                         <span class="date-completed" id="date-1-8"></span>
                     </div>
                     <h4>Notes:</h4>
-                    <textarea class="notes-area" id="notes-1" placeholder="Add any additional notes here..." onchange="saveNotes()"></textarea>
+                    <textarea class="notes-area" id="notes-1" placeholder="Add any additional notes here..." onchange="saveNotes()" aria-label="Section notes"></textarea>
                 </div>
             </div>
             
@@ -74,7 +95,7 @@
                     <span>2. Decoration Processes</span>
                     <span class="section-progress">0/0</span>
                 </div>
-                <div class="section-content">
+                <div class="section-content" role="region" aria-labelledby="decoration-header">
                     <div class="checklist-item">
                         <input type="checkbox" id="task-2-1" onchange="updateProgress()">
                         <label for="task-2-1">Choose All your Available Decoration Processes</label>
@@ -101,7 +122,7 @@
                         <span class="date-completed" id="date-2-5"></span>
                     </div>
                     <h4>Notes:</h4>
-                    <textarea class="notes-area" id="notes-2" placeholder="Add any additional notes here..." onchange="saveNotes()"></textarea>
+                    <textarea class="notes-area" id="notes-2" placeholder="Add any additional notes here..." onchange="saveNotes()" aria-label="Section notes"></textarea>
                 </div>
             </div>
             
@@ -111,7 +132,7 @@
                     <span>3. Supplier and Catalog</span>
                     <span class="section-progress">0/0</span>
                 </div>
-                <div class="section-content">
+                <div class="section-content" role="region" aria-labelledby="supplier-header">
                     <div class="checklist-item">
                         <input type="checkbox" id="task-3-1" onchange="updateProgress()">
                         <label for="task-3-1">Select your Catalog</label>
@@ -133,15 +154,27 @@
                         <span class="date-completed" id="date-3-5"></span>
                     </div>
                     <h4>Notes:</h4>
-                    <textarea class="notes-area" id="notes-3" placeholder="Add any additional notes here..." onchange="saveNotes()"></textarea>
+                    <textarea class="notes-area" id="notes-3" placeholder="Add any additional notes here..." onchange="saveNotes()" aria-label="Section notes"></textarea>
                 </div>
             </div>
-        </div>
-        <div class="buttons">
-            <button onclick="saveChecklist()">Save Progress</button>
-            <button class="export" onclick="exportChecklist()">Export Checklist</button>
-            <button class="reset" onclick="resetChecklist()">Reset Checklist</button>
-        </div>
+        </main>
+        
+        <footer class="action-bar">
+            <div class="button-group">
+                <button class="btn btn-save" onclick="saveChecklist()" title="Save your progress">
+                    <i class="fas fa-save" aria-hidden="true"></i>
+                    <span>Save Progress</span>
+                </button>
+                <button class="btn btn-export" onclick="exportChecklist()" title="Download checklist report">
+                    <i class="fas fa-download" aria-hidden="true"></i>
+                    <span>Export Report</span>
+                </button>
+                <button class="btn btn-reset" onclick="resetChecklist()" title="Reset all progress">
+                    <i class="fas fa-redo" aria-hidden="true"></i>
+                    <span>Reset All</span>
+                </button>
+            </div>
+        </footer>
     </div>
     <script src="checklistScript.js"></script>
     </body>
