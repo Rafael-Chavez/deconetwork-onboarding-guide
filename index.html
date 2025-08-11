@@ -241,6 +241,47 @@
     .observe(document.body, { childList: true, subtree: true });
 
 })();
+
+(function () {
+  function isBlockedLink(url) {
+    if (!url) return false;
+    try {
+      const blockedHosts = ['youtube.com', 'youtu.be'];
+      const forceList = ['https://www.deconetwork.com/decopro-request'];
+      const u = new URL(url, location.origin);
+
+      return (
+        blockedHosts.some(h => u.hostname.endsWith(h)) ||
+        forceList.some(f => u.href.startsWith(f)) ||
+        u.hostname !== location.hostname
+      );
+    } catch (e) {
+      return false;
+    }
+  }
+
+  // Intercept clicks before browser navigates
+  document.addEventListener('click', function (e) {
+    const a = e.target.closest('a[href]');
+    if (a && isBlockedLink(a.href)) {
+      e.preventDefault();
+      window.open(a.href, '_blank', 'noopener');
+    }
+  });
+
+  // Also fix link attributes so right-click "open in new tab" still works
+  function fixLinks() {
+    document.querySelectorAll('a[href]').forEach(a => {
+      if (isBlockedLink(a.href)) {
+        a.setAttribute('target', '_blank');
+        a.setAttribute('rel', 'noopener noreferrer');
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', fixLinks);
+  new MutationObserver(fixLinks).observe(document.body, { childList: true, subtree: true });
+})();
 </script>
 </body>
 </html>
