@@ -12,7 +12,7 @@
         <div class="header-content">
             <div class="logo">
                 <h1>DecoNetwork Onboarding Guide</h1>
-                <p class="tagline">Your comprehensive resource center</p>
+                <p class="tagline">Your complete guide to getting started with DecoNetwork</p>
             </div>
         </div>
     </header>
@@ -20,7 +20,7 @@
     <main class="container">
         <section class="hero-section">
             <div class="hero-content">
-                <h2>Welcome to the Resource Center</h2>
+                <h2>Welcome to your Quick Start Guide</h2>
                 <p class="hero-description">This guide is where you'll find helpful videos, guides, and resources to support your journey with DecoNetwork.</p>
             </div>
             <div class="cta-card">
@@ -170,13 +170,77 @@
     <script src="script.js"></script>
     
     <!-- Zendesk iframe height adjustment -->
-    <script>
-        function sendHeight() {
-            var height = document.body.scrollHeight;
-            window.parent.postMessage({ type: 'resize', height: height }, '*');
-        }
-        window.addEventListener('load', sendHeight);
-        window.addEventListener('resize', sendHeight);
-    </script>
+ <script>
+(function () {
+  // -------- 1) Reliable height posting to parent --------
+  function computeDocHeight() {
+    return Math.max(
+      document.documentElement.scrollHeight,
+      document.body.scrollHeight,
+      document.documentElement.offsetHeight,
+      document.body.offsetHeight,
+      document.documentElement.clientHeight
+    );
+  }
+
+  function postHeight() {
+    var h = computeDocHeight();
+    window.parent.postMessage({ type: 'resize', height: h }, 'https://help.deconetwork.com/hc/en-us/articles/231974848');
+  }
+
+  // Fire on load, resize, DOM changes, visibility change, and as a periodic safety net
+  window.addEventListener('load', postHeight);
+  window.addEventListener('resize', postHeight);
+  document.addEventListener('visibilitychange', postHeight);
+  new MutationObserver(function () { postHeight(); })
+    .observe(document.body, { childList: true, subtree: true, attributes: true });
+
+  // Late-loading assets safety net
+  var tick = 0, maxTicks = 20; // ~20s total
+  var interval = setInterval(function () {
+    postHeight();
+    if (++tick >= maxTicks) clearInterval(interval);
+  }, 1000);
+
+  // -------- 2) Force external / blocked-embed links to open in a new tab --------
+  function shouldOpenNewTab(a) {
+    if (!a || !a.href) return false;
+    // ignore hash-only and same-page anchors
+    if (a.getAttribute('href').startsWith('#')) return false;
+
+    var host = location.hostname;
+    var url = new URL(a.href, location.origin);
+
+    // Always new tab for common blocked-embed sites or cross-origin links
+    var blockedHosts = ['youtube.com', 'youtu.be'];
+    var isBlocked = blockedHosts.some(function (h) { return url.hostname.endsWith(h); });
+
+    var isCrossOrigin = url.hostname !== host;
+
+    // Specific known external page that should not load in iframe
+    var forceList = [
+      'https://www.deconetwork.com/decopro-request'
+    ];
+    var isForce = forceList.some(function (x) { return url.href.indexOf(x) === 0; });
+
+    return isBlocked || isCrossOrigin || isForce;
+  }
+
+  function fixLinks() {
+    document.querySelectorAll('a[href]').forEach(function (a) {
+      if (shouldOpenNewTab(a)) {
+        a.setAttribute('target', '_blank');
+        a.setAttribute('rel', 'noopener noreferrer');
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', fixLinks);
+  // Re-run when content changes
+  new MutationObserver(fixLinks)
+    .observe(document.body, { childList: true, subtree: true });
+
+})();
+</script>
 </body>
 </html>
