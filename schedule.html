@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule a Follow-up Session - DecoNetwork</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .scheduler-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .scheduler-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .scheduler-header h1 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .scheduler-header p {
+            color: #666;
+            font-size: 1.1rem;
+            line-space: 1.6;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #3498db;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #2980b9;
+        }
+
+        .scheduler-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .scheduler-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .scheduler-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .scheduler-card-header {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .scheduler-card-header h3 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+
+        .scheduler-card-body {
+            padding: 1.5rem;
+        }
+
+        .scheduler-card-body p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .scheduler-iframe-container {
+            position: relative;
+            width: 100%;
+            min-height: 800px;
+            height: 800px;
+            border-radius: 8px;
+            overflow: auto;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: white;
+            border: 2px solid #e0e0e0;
+        }
+
+        .scheduler-iframe-container iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 800px;
+            border: none;
+            display: block;
+        }
+
+        .btn-schedule {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-schedule:hover {
+            background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        footer {
+            background: #0f172a;
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        footer p:last-child {
+            margin-bottom: 0;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .scheduler-container {
+                padding: 1rem;
+            }
+
+            .scheduler-iframe-container {
+                height: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <h1>DecoNetwork Onboarding Guide</h1>
+                <p class="tagline">Schedule Your Follow-up Session</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="scheduler-container">
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i>
+            Back to Onboarding Guide
+        </a>
+
+        <div class="scheduler-header">
+            <h1>Schedule a Follow-up Session</h1>
+            <p>Choose a session below to book time with our team. We're here to help you get the most out of DecoNetwork.</p>
+        </div>
+
+        <div class="scheduler-grid">
+            <div class="scheduler-card">
+                <div class="scheduler-card-header">
+                    <h3><i class="fas fa-calendar-check"></i> 1-on-1 Meeting with Rafael</h3>
+                </div>
+                <div class="scheduler-card-body">
+                    <p>Continue your onboarding journey with a personalized follow-up session. Our team will address your questions and help you move forward.</p>
+                    <a href="https://scheduler.zoom.us/d/zy5bqh11/follow-up--onboarding-session" target="_blank" class="btn-schedule">
+                        Schedule Now
+                    </a>
+                </div>
+            </div>
+
+            <div class="scheduler-card">
+                <div class="scheduler-card-header">
+                    <h3><i class="fas fa-user-clock"></i> 1-on-1 Meeting with Danreb</h3>
+                </div>
+                <div class="scheduler-card-body">
+                    <p>Schedule a personalized follow-up onboarding session with Danreb to get tailored support and answers to your specific questions.</p>
+                    <a href="https://scheduler.zoom.us/d/n_16jf-w/followup-onboarding-danreb" target="_blank" class="btn-schedule">
+                        Schedule with Danreb
+                    </a>
+                </div>
+            </div>
+
+            <div class="scheduler-card">
+                <div class="scheduler-card-header">
+                    <h3><i class="fas fa-user-tie"></i> 1-on-1 Meeting with Erick</h3>
+                </div>
+                <div class="scheduler-card-body">
+                    <p>Book a one-on-one meeting with Erick for in-depth guidance, advanced feature discussions, or customized support.</p>
+                    <a href="https://scheduler.zoom.us/d/u16m00e0/1-on-1-meeting--erick" target="_blank" class="btn-schedule">
+                        Schedule with Erick
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>All resources are regularly updated to ensure you have access to the most current information.</p>
+        <p>&copy; 2025 DecoNetwork. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
