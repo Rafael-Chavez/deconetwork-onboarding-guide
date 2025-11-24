@@ -132,7 +132,6 @@ header::before {
 }
 
 .cta-card:hover {
-    transform: translateY(-1.5rem);
     box-shadow: 0 20px 40px -10px var(--shadow-lg), 0 8px 16px -4px var(--shadow);
 }
 
@@ -211,7 +210,6 @@ header::before {
 }
 
 .resource-card:hover {
-    transform: translateY(-8px);
     box-shadow: 0 20px 40px -10px var(--shadow-lg), 0 8px 16px -4px var(--shadow);
     border-color: var(--primary);
 }
@@ -261,13 +259,11 @@ header::before {
 }
 
 .btn:hover {
-    transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
 }
 
 .btn-primary:hover {
     background: rgba(255, 255, 255, 0.95);
-    transform: translateY(-2px);
     box-shadow: 0 12px 40px rgba(255, 255, 255, 0.2);
 }
 
@@ -331,7 +327,6 @@ header::before {
 
 .support-item:hover {
     background: rgba(255, 255, 255, 0.15);
-    transform: translateY(-4px);
 }
 
 .support-item i {
@@ -363,7 +358,6 @@ header::before {
 .support-item a:hover {
     background: rgba(255, 255, 255, 0.2);
     color: white;
-    transform: translateY(-1px);
 }
 
 footer {
@@ -395,7 +389,7 @@ footer p:last-child {
     }
     
     .cta-card:hover {
-        transform: translateY(-0.5rem);
+        box-shadow: 0 20px 40px -10px var(--shadow-lg), 0 8px 16px -4px var(--shadow);
     }
 }
 
