@@ -132,7 +132,7 @@ header::before {
 }
 
 .cta-card:hover {
-    box-shadow: 0 20px 40px -10px var(--shadow-lg), 0 8px 16px -4px var(--shadow);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
 }
 
 .cta-content {
@@ -210,7 +210,7 @@ header::before {
 }
 
 .resource-card:hover {
-    box-shadow: 0 20px 40px -10px var(--shadow-lg), 0 8px 16px -4px var(--shadow);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
     border-color: var(--primary);
 }
 
@@ -259,12 +259,11 @@ header::before {
 }
 
 .btn:hover {
-    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+    background: #3995e6;
 }
 
 .btn-primary:hover {
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 12px 40px rgba(255, 255, 255, 0.2);
+    background: #f4f6fb;
 }
 
 .support-section {
